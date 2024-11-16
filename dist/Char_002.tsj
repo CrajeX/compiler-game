@@ -1,0 +1,14 @@
+{ "columns":6,
+ "image":"..\/..\/Free Character Sprites - Fantasy Dreamland\/16x16\/Char_002.png",
+ "imageheight":96,
+ "imagewidth":96,
+ "margin":0,
+ "name":"Char_002",
+ "spacing":0,
+ "tilecount":36,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

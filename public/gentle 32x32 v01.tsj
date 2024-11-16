@@ -1,0 +1,14 @@
+{ "columns":8,
+ "image":"mapsprites\/gentle 32x32 v01.png",
+ "imageheight":32,
+ "imagewidth":128,
+ "margin":0,
+ "name":"gentle 32x32 v01",
+ "spacing":0,
+ "tilecount":16,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

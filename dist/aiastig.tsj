@@ -1,0 +1,14 @@
+{ "columns":96,
+ "image":"..\/..\/..\/..\/Pictures\/aiastig.jpg",
+ "imageheight":2048,
+ "imagewidth":1536,
+ "margin":0,
+ "name":"aiastig",
+ "spacing":0,
+ "tilecount":12288,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

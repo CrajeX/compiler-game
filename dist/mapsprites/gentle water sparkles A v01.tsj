@@ -1,0 +1,14 @@
+{ "columns":3,
+ "image":"gentle water sparkles A v01.png",
+ "imageheight":48,
+ "imagewidth":48,
+ "margin":0,
+ "name":"gentle water sparkles A v01",
+ "spacing":0,
+ "tilecount":9,
+ "tiledversion":"1.11.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

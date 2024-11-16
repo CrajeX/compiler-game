@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <style>
+        @font-face {
+            font-family: monogram;
+            src: url(monogram.ttf);
+        }
+        body {
+            font-family: monogram, monospace;
+            font-size: 2rem;
+            overflow: hidden;
+        }
+        #app {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #textbox {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 2vh;
+            min-height: 10vh;
+            background: white;
+            border-radius: 4px;
+            outline-style: solid;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            word-spacing: 0.2rem;
+            filter: drop-shadow(0 0 0.75rem rgb(247, 241, 241));
+        }
+        .ui-text {
+            margin: 0;
+            user-select: none;
+        }
+        .ui-close-btn {
+           font-family: monogram, monospace;
+           
+           border-style: none;
+           border-radius: 3px;
+           padding: 1rem;
+           font-size: inherit;
+        }
+        .btn-container {
+            align-self: flex-end;
+            margin-top: 1rem;
+        }
+        .note {
+            position: absolute;
+            left: 5%;
+            top: 10vh;
+            display: flex;
+            flex-direction: column;
+            color: rgb(255, 255, 255);   
+            user-select: none;
+        }
+        /* X mark button styles for the top navbar toggle */
+
+    </style>
+   <!-- X mark button to toggle the navbar -->
+   <button id="toggle-navbar" class="toggle-btn">&times;</button>
+
+   <!-- Navbar with tabs -->
+   <div class="navbar" id="navbar">
+       <div class="tab" id="side-tab">Side</div>
+       <div class="tab"><a href="https://napoles.netlify.app/">Act1</a></div>
+       <div class="tab"><a href="https://signup-cj.netlify.app/">Act2</a></div>
+       <div class="tab"><a href="https://napoles-act4.netlify.app/">Act3</a></div>
+       <div class="tab"><a href="https://pracj.netlify.app/">Act4</a></div>
+   </div>
+
+   <!-- Sidebar that is absolutely positioned below the navbar -->
+   <div class="sidebar" id="sidebar">
+       <a href="https://napoles.netlify.app/" class="sidebar-link">Act1</a>
+       <a href="https://signup-cj.netlify.app/" class="sidebar-link">Act2</a>
+       <a href="https://napoles-act4.netlify.app/" class="sidebar-link">Act3</a>
+       <a href="https://pracj.netlify.app/" class="sidebar-link">Act4</a>
+       <a href="#" class="close-btn" id="close-btn">&times;</a> <!-- X mark to close the sidebar -->
+   </div>
+   <!-- Creates an container for the app -->
+    <div id="app"> create
+        <!-- Creates a dialogue box for the player -->
+        <div id="ui">
+            <p class="note">Tap/Click around to move</p>
+            <div id="textbox-container" style="display: none;">
+                <div id="textbox">
+                    <p id="dialogue" class="ui-text"></p>
+                    <div class="btn-container">
+                        <button id="close" class="ui-close-btn" name="button">Close</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The game only works when you put it on this Canvas Tag -->
+        <canvas id="game"></canvas>
+    </div>
+    <!-- Calls the src/Main.js -->
+    <script type="module" src="src/main.js"></script>
+    <script>
+        const toggleNavbarBtn = document.getElementById('toggle-navbar');
+        const navbar = document.getElementById('navbar');
+        const sideTab = document.getElementById('side-tab');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Toggle Navbar visibility when the top "X" button is clicked
+        toggleNavbarBtn.addEventListener('click', function() {
+            navbar.classList.toggle('hidden');  // Toggle the 'hidden' class to show/hide the navbar
+        });
+
+        // Show the sidebar when the "Side" tab is clicked
+        sideTab.addEventListener('click', function() {
+            sidebar.style.width = '250px';  // Open the sidebar to 250px width
+        });
+
+        // Close the sidebar when the "X" button inside the sidebar is clicked
+        closeBtn.addEventListener('click', function() {
+            sidebar.style.width = '0';  // Close the sidebar by setting its width to 0
+        });
+          // Disable right-click
+          document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        // Disable F12 key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12') {
+                event.preventDefault();
+            }
+        });
+
+        // Prevent Ctrl+Shift+I
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+                event.preventDefault();
+            }
+        });
+    </script>
+  </body>
+</html>
